@@ -25,11 +25,20 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'PagesController@home');
 Route::get('/about', 'PagesController@about');
 
+// mahasiswa
 Route::get('/mahasiswa', 'MahasiswaController@index');
+Route::get('/mahasiswa/{create}', 'MahasiswaController@create');
+Route::post('/mahasiswa', 'MahasiswaController@store');
 
-// Students
- Route::get('/students', 'StudentsController@index');
- Route::get('/students/{create}', 'StudentsController@create');
- Route::get('/students/{student}', 'StudentsController@show');
- Route::post('/students', 'StudentsController@store');
- 
+// Students dengan cara manual
+//  Route::get('/students', 'StudentsController@index'); // menampilkan data students
+//  Route::get('/students/ create', 'StudentsController@create'); // form untuk nambah Data
+//  Route::post('/students', 'StudentsController@store'); // menangani insert data ke dalam database
+//  Route::get('/students/{student}', 'StudentsController@show');  // untuk menampilkan detail dari students
+//  Route::delete('/students/{student}', 'StudentsController@destroy');  // untuk menghapu data
+//  Route::get('/students/{student}/edit', 'StudentsController@edit');  // untuk merubah data
+//  Route::patch('/students/{student}', 'StudentsController@update');  // untuk menangkap perubahan data
+
+// Students dengan caara magicnya laravel
+
+Route::resource('students','StudentsController');

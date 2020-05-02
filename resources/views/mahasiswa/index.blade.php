@@ -8,7 +8,8 @@
             <div class="row">
                 <div class="col-10">
                     <h1 class="mt-3">Daftar Mahasiswa</h1>
-                        <tr>            
+                        <tr>     
+                        <a href="/mahasiswa/create" class="btn btn-primary my-3">Tambah Data Mahasiswa</a>       
                             <table class="table"> 
                                 <thead class="thead-dark">
                                 <th scope="col">#</th>     
